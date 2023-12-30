@@ -387,7 +387,7 @@ const sectionTriggers = [
     {
         trigger: "#constant",
         textColor: "#000", // Text color for page 4
-        bgColor: "#fff", // Background color for page 4
+        bgColor: "#transparent", // Background color for page 4
     },
     // Add more sections as needed
 ];
