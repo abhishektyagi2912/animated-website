@@ -8,7 +8,7 @@ function dom2() {
             start: 'top center',
             end: 'bottom center',
             toggleClass: 'active',
-            markers: false, // Set to false in production
+            markers: false, 
         });
     });
 
@@ -319,7 +319,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             scrub: 0.4,
             trigger: "#home2",
             start: "bottom 2%",
-            end: "bottom 50%", // Adjust the end position as needed
+            end: "bottom 120%", 
             ease: "none"
         },
     });
@@ -331,7 +331,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             scrub: 0.4,
             trigger: "#home2",
             start: "bottom 2%",
-            end: "bottom 50%", // Adjust the end position as needed
+            end: "bottom 120%", 
             ease: "none"
         },
     });
@@ -343,7 +343,8 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             scrub: 0.4,
             trigger: "#home2",
             start: "bottom 2%",
-            end: "bottom 50%", // Adjust the end position as needed
+            markers: true,
+            end: "bottom 50%", 
             ease: "none"
         },
     });
@@ -356,7 +357,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             scrub: 0.4,
             trigger: "#video",
             start: "bottom 2%",
-            end: "bottom 50%", // Adjust the end position as needed
+            end: "bottom 50%",
             ease: "none"
         },
     });
@@ -376,20 +377,20 @@ const navBar = document.getElementById("nav");
 const sectionTriggers = [
     {
         trigger: "#page2",
-        textColor: "#fff", // Text color for page 2
-        bgColor: "transparent",   // Background color for page 2
+        textColor: "#fff", 
+        bgColor: "transparent",  
     },
     {
         trigger: "#page3",
-        textColor: "#000", // Text color for page 3
-        bgColor: "transparent",   // Background color for page 3
+        textColor: "#000", 
+        bgColor: "transparent",   
     },
     {
         trigger: "#constant",
-        textColor: "#000", // Text color for page 4
-        bgColor: "#transparent", // Background color for page 4
+        textColor: "#000", 
+        bgColor: "#transparent", 
     },
-    // Add more sections as needed
+    
 ];
 
 // Create ScrollTrigger instances for each section
@@ -399,18 +400,16 @@ sectionTriggers.forEach(({ trigger, textColor, bgColor }) => {
         start: "top center",
         end: "bottom center",
         onEnter: () => {
-            // When scrolling enters the specified section, change the text color and background color
             navLinks.forEach(link => {
                 link.style.color = textColor;
             });
             navBar.style.backgroundColor = bgColor;
         },
         onLeaveBack: () => {
-            // When scrolling exits the specified section, revert the text color and background color
             navLinks.forEach(link => {
-                link.style.color = ""; // Set to an empty string to revert to the default color
+                link.style.color = ""; 
             });
-            navBar.style.backgroundColor = ""; // Set to an empty string to revert to the default color
+            navBar.style.backgroundColor = ""; 
         },
     });
 });
