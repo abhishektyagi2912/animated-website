@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1vw 4vw ;
+    padding: 1vw 4vw;
     margin-bottom: 3vh;
 }
 
@@ -78,7 +78,7 @@ body {
 
 }
 
-#content span{
+#content span {
     font-size: 1.5em;
     font-weight: 300;
     margin-top: 5vh;
@@ -133,6 +133,7 @@ canvas {
     position: relative;
     z-index: 2;
 }
+
 .section {
     color: #fff;
     height: 100vh;
@@ -171,7 +172,21 @@ canvas {
     background: transparent;
 }
 
-#main2{
+.collage-image {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+}
+
+.collage-image img{
+    width:20vw;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center top;
+    background: transparent;
+}
+
+#main2 {
     padding: 0 4vw;
 }
 

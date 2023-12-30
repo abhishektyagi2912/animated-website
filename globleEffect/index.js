@@ -8,7 +8,7 @@ function dom2() {
             start: 'top center',
             end: 'bottom center',
             toggleClass: 'active',
-            markers: false, 
+            markers: false,
         });
     });
 
@@ -319,7 +319,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             scrub: 0.4,
             trigger: "#home2",
             start: "bottom 2%",
-            end: "bottom 120%", 
+            end: "bottom 120%",
             ease: "none"
         },
     });
@@ -331,7 +331,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             scrub: 0.4,
             trigger: "#home2",
             start: "bottom 2%",
-            end: "bottom 120%", 
+            end: "bottom 120%",
             ease: "none"
         },
     });
@@ -343,25 +343,11 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             scrub: 0.4,
             trigger: "#home2",
             start: "bottom 2%",
-            markers: true,
-            end: "bottom 50%", 
+            // markers: true,
+            end: "bottom 30%",
             ease: "none"
         },
     });
-
-    // Scroll-triggered animation for collage images
-    gsap.to(".collage-image", {
-        scale: 0.6,
-        stagger: 0.1,
-        scrollTrigger: {
-            scrub: 0.4,
-            trigger: "#video",
-            start: "bottom 2%",
-            end: "bottom 50%",
-            ease: "none"
-        },
-    });
-
     ScrollTrigger.create({
         trigger: "#home2",
         pin: true,
@@ -370,6 +356,76 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
 }
 dom2()
 
+function shrinkVideoOnScroll() {
+    const video = document.querySelector("#video video");
+
+    // Initial setup
+    gsap.set(video, { scale: 1 });
+
+    // Scroll-triggered animation for video scaling
+    gsap.to(video, {
+        scale: 0.2,
+        scrollTrigger: {
+            scrub: 0.4,
+            // markers: true,
+            trigger: "#page3",
+            start: "top 10%", 
+            end: "bottom 20%", 
+            ease: "none",
+            pin: true,
+        },
+    });
+
+    // Scroll-triggered animation for video positioning
+    gsap.to(video, {
+        yPercent: -30,
+        scrollTrigger: {
+            scrub: 0.4,
+            trigger: "#page3",
+            start: "bottom 20%", 
+            end: "bottom 120%", 
+            ease: "none",
+        },
+    });
+}
+shrinkVideoOnScroll();
+
+function zoomImagesOnScroll() {
+    // Set initial scale for images
+    gsap.set(["#image1", "#image2", "#image3", "#image4"], { scale: 0.2, transformOrigin: "center center" });
+
+    // Scroll-triggered animation for zooming images
+    gsap.to(["#image1", "#image2"], {
+        scale: 1,
+        xPercent: 10,
+        scrollTrigger: {
+            scrub: 0.4,
+            // markers: true,
+            trigger: "#page3",
+            start: "top 0%",
+            end: "bottom 20%", 
+            ease: "none",
+        },
+    });
+
+    gsap.to(["#image3", "#image4"], {
+        scale: 1,
+        xPercent: 50,
+        scrollTrigger: {
+            scrub: 0.4,
+            // markers: true,
+            trigger: "#page3",
+            start: "top 0%",   
+            end: "bottom 20%", 
+            ease: "none",
+        },
+    });
+}
+
+zoomImagesOnScroll();
+
+
+
 const navLinks = document.querySelectorAll("#nav a");
 const navBar = document.getElementById("nav");
 
@@ -377,20 +433,20 @@ const navBar = document.getElementById("nav");
 const sectionTriggers = [
     {
         trigger: "#page2",
-        textColor: "#fff", 
-        bgColor: "transparent",  
+        textColor: "#fff",
+        bgColor: "transparent",
     },
     {
         trigger: "#page3",
-        textColor: "#000", 
-        bgColor: "transparent",   
+        textColor: "#000",
+        bgColor: "transparent",
     },
     {
         trigger: "#constant",
-        textColor: "#000", 
-        bgColor: "#transparent", 
+        textColor: "#000",
+        bgColor: "#transparent",
     },
-    
+
 ];
 
 // Create ScrollTrigger instances for each section
@@ -407,9 +463,9 @@ sectionTriggers.forEach(({ trigger, textColor, bgColor }) => {
         },
         onLeaveBack: () => {
             navLinks.forEach(link => {
-                link.style.color = ""; 
+                link.style.color = "";
             });
-            navBar.style.backgroundColor = ""; 
+            navBar.style.backgroundColor = "";
         },
     });
 });
