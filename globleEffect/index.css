@@ -70,7 +70,25 @@ body {
     text-align: center;
 }
 
-#content img {
+#content i {
+    height: 36px;
+    width: 36px;
+    font-size: 4em;
+    font-weight: 20;
+
+}
+
+#content span{
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-top: 5vh;
+    font-style: bold;
+}
+
+#imagecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20vh;
 }
 
