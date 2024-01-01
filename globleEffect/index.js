@@ -397,7 +397,6 @@ function zoomImagesOnScroll() {
     // Scroll-triggered animation for zooming images
     gsap.to(["#image1", "#image2"], {
         scale: 1,
-        xPercent: 10,
         scrollTrigger: {
             scrub: 0.4,
             // markers: true,
@@ -410,7 +409,6 @@ function zoomImagesOnScroll() {
 
     gsap.to(["#image3", "#image4"], {
         scale: 1,
-        xPercent: 50,
         scrollTrigger: {
             scrub: 0.4,
             // markers: true,
