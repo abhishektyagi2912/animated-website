@@ -367,7 +367,7 @@ function shrinkVideoOnScroll() {
         scale: 0.3,
         scrollTrigger: {
             scrub: 0.4,
-            markers: true,
+            // markers: true,
             trigger: "#page3",
             start: "top 10%",
             end: "bottom 20%",
