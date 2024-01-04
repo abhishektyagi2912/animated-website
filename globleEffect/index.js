@@ -318,7 +318,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
         scrollTrigger: {
             scrub: 0.4,
             trigger: "#home2",
-            start: "bottom 2%",
+            start: "bottom 10%",
             end: "bottom 120%",
             ease: "none"
         },
@@ -330,7 +330,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
         scrollTrigger: {
             scrub: 0.4,
             trigger: "#home2",
-            start: "bottom 2%",
+            start: "bottom 10%",
             end: "bottom 120%",
             ease: "none"
         },
@@ -369,8 +369,8 @@ function shrinkVideoOnScroll() {
             scrub: 0.4,
             // markers: true,
             trigger: "#page3",
-            start: "top 10%", 
-            end: "bottom 20%", 
+            start: "top 10%",
+            end: "bottom 20%",
             ease: "none",
             pin: true,
         },
@@ -382,45 +382,53 @@ function shrinkVideoOnScroll() {
         scrollTrigger: {
             scrub: 0.4,
             trigger: "#page3",
-            start: "bottom 20%", 
-            end: "bottom 120%", 
+            start: "bottom 20%",
+            end: "bottom 120%",
             ease: "none",
         },
     });
 }
 shrinkVideoOnScroll();
 
-function zoomImagesOnScroll() {
-    // Set initial scale for images
-    gsap.set(["#image1", "#image2", "#image3", "#image4"], { scale: 0.2, transformOrigin: "center center" });
+function setupPage3Animations() {
+    const leftImages = ["#image1", "#image2"];
+    const rightImages = ["#image3", "#image4"];
 
-    // Scroll-triggered animation for zooming images
-    gsap.to(["#image1", "#image2"], {
+    gsap.set([leftImages, rightImages], { scale: 0.2, transformOrigin: "center center" });
+
+
+    // Scroll-triggered animation for zooming and rotating left images
+    gsap.to(leftImages, {
         scale: 1,
+        rotation: 360,
+        x: "-50%", // Left images
+        y: "-50%",
         scrollTrigger: {
             scrub: 0.4,
-            // markers: true,
             trigger: "#page3",
-            start: "top 0%",
-            end: "bottom 20%", 
+            start: "top 40%",
+            end: "bottom 20%",
             ease: "none",
         },
     });
 
-    gsap.to(["#image3", "#image4"], {
+    // Scroll-triggered animation for zooming and rotating right images
+    gsap.to(rightImages, {
         scale: 1,
+        rotation: -360,
+        x: "50%", // Right images
+        y: "-50%",
         scrollTrigger: {
             scrub: 0.4,
-            // markers: true,
             trigger: "#page3",
-            start: "top 0%",   
-            end: "bottom 20%", 
+            start: "top 40%",
+            end: "bottom 20%",
             ease: "none",
         },
     });
 }
 
-zoomImagesOnScroll();
+setupPage3Animations();
 
 
 

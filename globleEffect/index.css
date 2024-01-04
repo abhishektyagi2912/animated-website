@@ -152,12 +152,16 @@ canvas {
 
 
 #page3 {
+    display: flex;
+    height: 100vh;
+    position: relative;
     width: 100%;
     border-top: 1px solid transparent;
     z-index: 1;
 }
 
 #page3 video {
+    /* display: flex; */
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -165,23 +169,73 @@ canvas {
 
 
 #video video {
+    position: absolute;
     width: 100%;
+    z-index: 1;
     height: auto;
     object-fit: cover;
     object-position: center top;
     background: transparent;
 }
 
-.collage-image {
+#page-left {
+    position: absolute;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 10vh;
+    flex-direction: column;
+    margin-top: 20vh;
+    margin-left: 8vw;
+    color: #F4F4F4;
 }
 
-.collage-image img{
-    width:20vw;
-    height: 30vh;
+#page-left #image1 img{
+    position: absolute;
+    width: 20vw;
+    height: 25vh;
+    margin-top: -20vh;
     object-fit: cover;
+    border-radius: 2vw;
+    object-position: center top;
+    background: transparent;
+}
+
+#page-left #image2 img{
+    position: absolute;
+    width: 20vw;
+    height: 25vh;
+    margin-top: 10vh;
+    object-fit: cover;
+    border-radius: 2vw;
+    object-position: center top;
+    background: transparent;
+}
+
+#page-right {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    margin-left: 70vw;
+    color: #F4F4F4;
+}
+
+#page-right #image3 img{
+    position: absolute;
+    width: 20vw;
+    height: 25vh;
+    margin-top: -20vh;
+    border-radius: 2vw;
+    object-fit: cover;
+    object-position: center top;
+    background: transparent;
+}
+
+#page-right #image4 img{
+    position: absolute;
+    width: 20vw;
+    height: 25vh;
+    margin-top: 10vh;
+    object-fit: cover;
+    border-radius: 2vw;
     object-position: center top;
     background: transparent;
 }
