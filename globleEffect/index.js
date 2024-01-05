@@ -348,6 +348,27 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
             ease: "none"
         },
     });
+
+    gsap.to("#home2 canvas", {
+        display: "none",
+        scrollTrigger: {
+            scrub: 1,
+            markers: true,
+            trigger: "#home2",
+            start: "top 60%",
+            end: "bottom 12%",
+            ease: "none",
+            onToggle: (self) => {
+                if (self.isActive) {
+                    // Hide canvas when transitioning to video
+                    canvas.style.display = "none";
+                } else {
+                    // Show canvas when transitioning back from video
+                    canvas.style.display = "";
+                }
+            },
+        },
+    });
     ScrollTrigger.create({
         trigger: "#home2",
         pin: true,
