@@ -379,18 +379,6 @@ function shrinkVideoOnScroll() {
             pin: true,
         },
     });
-
-    // Scroll-triggered animation for video positioning
-    gsap.to(video, {
-        yPercent: -30,
-        scrollTrigger: {
-            scrub: 0.4,
-            trigger: "#page3",
-            start: "bottom 20%",
-            end: "bottom 120%",
-            ease: "none",
-        },
-    });
 }
 shrinkVideoOnScroll();
 
