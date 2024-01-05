@@ -170,7 +170,7 @@ canvas {
 
 #video video {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     height: auto;
     border-radius: 2vw;
     object-fit: cover;
@@ -385,4 +385,320 @@ canvas {
     align-items: center;
     border-top: 1px solid #fff;
     margin-top: 10vh;
+}
+
+@media only screen and (max-width: 700px) {
+    #nav #navright {
+        display: none;
+    }
+
+    #nav #navleft {
+        display: none;
+    }
+
+    #content h1 {
+        width: 80vw;
+        font-size: 2em;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    #content i {
+        height: 36px;
+        width: 36px;
+        font-size: 2em;
+        font-weight: 20;
+
+    }
+
+    #content span {
+        font-size: 1em;
+        font-weight: 300;
+        margin-top: 5vh;
+        font-style: bold;
+    }
+
+    #imagecontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20vh;
+    }
+
+    canvas {
+        max-width: 100vw;
+        max-height: 400vh;
+    }
+
+    #page2 {
+        /* position: relative; */
+        overflow: hidden;
+        width: 100%;
+        border-top: 1px solid transparent;
+        z-index: 1;
+    }
+
+    #fixed-background {
+        background: url(https://arvr.google.com/static/images/frames/hero/bg.jpg) center/cover no-repeat;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    #page2 canvas {
+        width: 100%;
+        position: relative;
+        bottom: 0%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    #home2 {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+
+    #overflow {
+        position: relative;
+        z-index: 2;
+    }
+
+    .section {
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .section.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #page3 {
+        display: flex;
+        position: relative;
+        width: 100%;
+        border-top: 1px solid transparent;
+        z-index: 1;
+    }
+    
+    #page3 video {
+        /* display: flex; */
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+    
+    
+    #video video {
+        position: absolute;
+        z-index: 1;
+        border-radius: 2vw;
+        object-fit: cover;
+        background: transparent;
+    }
+    
+    #page-left {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20vh;
+        margin-left: -2vw;
+        color: #F4F4F4;
+    }
+    
+    #page-left #image1 img{
+        position: absolute;
+        width: 25vw;
+        height: 20vh;
+        margin-top: -20vh;
+        object-fit: cover;
+        border-radius: 2vw;
+        object-position: center top;
+        background: transparent;
+    }
+    
+    #page-left #image2 img{
+        opacity: 0;
+    }
+    
+    #page-right {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20vh;
+        margin-left: 74vw;
+        color: #F4F4F4;
+    }
+    
+    #page-right #image3 img{
+        opacity: 0;
+    }
+    
+    #page-right #image4 img{
+        overflow-x: hidden;
+        position: absolute;
+        width: 25vw;
+        height: 20vh;
+        margin-top: -20vh;
+        object-fit: cover;
+        border-radius: 2vw;
+        object-position: center top;
+        background: transparent;
+    }
+    
+    #page2Heading {
+        font-size: 3em;
+        font-weight: 600;
+        line-height: 10vh;
+        margin-top: 1vh;
+    }
+    
+    #page2card {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+    }
+    
+    .cards {
+        display: flex;
+        position: absolute;
+        background-color: white;
+        z-index: 4;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5vw;
+        border-radius: 15px;
+    }
+    
+    .cards>div {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    
+    #card1left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        height: 80vh;
+    }
+    
+    #card1left h1 {
+        font-size: 3.2em;
+        font-weight: 600;
+        box-sizing: border-box;
+        margin-bottom: 3vh;
+    }
+    
+    #card1left p {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom: 3vh;
+        padding-top: 3vh;
+        border-top: 0.5px solid #000;
+    }
+    
+    #card1right img {
+        height: 30vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: 40% 50%;
+    }
+    
+    #card2right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        height: 100vh;
+    }
+    
+    #card2right h1 {
+        font-size: 3.2em;
+        font-weight: 600;
+        box-sizing: border-box;
+        margin-bottom: 3vh;
+    }
+    
+    #card2right p {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom: 3vh;
+        padding-top: 3vh;
+        border-top: 0.5px solid #000;
+    }
+    
+    #card2left img {
+        height: 30vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: 40% 50%;
+    }
+    
+    #card3left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        height: 100vh;
+    }
+    
+    #card3left h1 {
+        font-size: 3.2em;
+        font-weight: 600;
+        box-sizing: border-box;
+        margin-bottom: 3vh;
+    }
+    
+    #card3left p {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom: 3vh;
+        padding-top: 3vh;
+        border-top: 0.5px solid #000;
+    }
+    
+    #card3right img {
+        height: 30vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: 40% 50%;
+    }
+    
+    #card-four {
+        z-index: 4;
+    }
+    
+    #second {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin-top: 20vh;
+        background-color: #000;
+        color: #F4F4F4;
+    }
+    
+    #constant {
+        padding: 0 4vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #fff;
+        margin-top: 10vh;
+    }
 }

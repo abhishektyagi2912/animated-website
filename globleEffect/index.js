@@ -359,12 +359,16 @@ dom2()
 function shrinkVideoOnScroll() {
     const video = document.querySelector("#video video");
 
+    const getScale = () => {
+        return window.innerWidth >= 768 ? 0.3 : 0.4; // Adjust the threshold as needed
+    };
+
     // Initial setup
     gsap.set(video, { scale: 1 });
 
     // Scroll-triggered animation for video scaling
     gsap.to(video, {
-        scale: 0.3,
+        scale: getScale(),
         scrollTrigger: {
             scrub: 0.4,
             // markers: true,
