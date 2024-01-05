@@ -353,7 +353,7 @@ https://arvr.google.com/static/images/frames/hero/small/00466.png
         display: "none",
         scrollTrigger: {
             scrub: 1,
-            markers: true,
+            // markers: true,
             trigger: "#home2",
             start: "top 60%",
             end: "bottom 12%",
